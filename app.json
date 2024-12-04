@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "testapp",
-    "slug": "testapp",
+    "name": "Aora",
+    "slug": "aora",
     "version": "1.0.0",
 
-    "scheme": "testapp",
+    "scheme": "aora",
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -16,7 +16,7 @@
 
       "tsconfigPaths": true
     },
-
+    "newArchEnabled": true,
     "orientation": "portrait",
     "icon": "./assets/icon.png",
 

@@ -1,19 +1,44 @@
-import { Stack, Link } from 'expo-router';
+import React from 'react';
+import { Image, ScrollView, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import CustomButton from '~/components/CustomButton';
+import { images } from '~/constants';
 
-import { Button } from '~/components/Button';
-import { Container } from '~/components/Container';
-import { ScreenContent } from '~/components/ScreenContent';
-
-export default function Home() {
+const RootLayout = () => {
   return (
-    <>
-      <Stack.Screen options={{ title: 'Home' }} />
-      <Container>
-        <ScreenContent path="app/index.tsx" title="Home" />
-        <Link href={{ pathname: '/details', params: { name: 'Dan' } }} asChild>
-          <Button title="Show Details" />
-        </Link>
-      </Container>
-    </>
+    <SafeAreaView className="bg-primary h-full">
+      <ScrollView contentContainerStyle={{ height: '100%' }}>
+        <View className="h-full w-full items-center justify-center px-4">
+          <Image source={images.logo} className="h-[84px] w-[130px]" resizeMode="contain" />
+          <Image
+            source={images.cards}
+            className="h-[300px] w-full max-w-[380px]"
+            resizeMode="contain"
+          />
+          <View className="relative mt-5">
+            <Text className="text-center text-3xl font-bold text-white">
+              Discover Endless Possibilities With{' '}
+              <Text className="text-secondary text-center text-3xl font-bold">Aora</Text>
+            </Text>
+            <Image
+              source={images.path}
+              className="absolute -bottom-2 -right-8 h-[15px] w-[136px]"
+              resizeMode="contain"
+            />
+          </View>
+          <Text className="font-pregular mt-7 text-center text-sm text-gray-100">
+            Where creativity meets innovation: embark on a journey of limitless exploration with
+            Aora
+          </Text>
+          <CustomButton
+            title="Continue with email"
+            handlePress={() => {}}
+            containerStyles="w-full mt-7"
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
-}
+};
+
+export default RootLayout;
