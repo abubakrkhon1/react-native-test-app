@@ -5,8 +5,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Redirect, router } from 'expo-router';
 import CustomButton from '~/components/CustomButton';
 import { images } from '~/constants';
+import { useGlobalContext } from '~/context/GlobalProvider';
 
 const RootLayout = () => {
+  const { isLoggedIn, isLoading } = useGlobalContext();
+
+  if (!isLoading && isLoggedIn) return <Redirect href="/home" />;
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%' }}>

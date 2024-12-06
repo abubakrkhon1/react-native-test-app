@@ -29,7 +29,8 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "package": "com.abubakrsadriddinov.aora"
     },
     "android": {
       "adaptiveIcon": {
