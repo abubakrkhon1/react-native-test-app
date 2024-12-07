@@ -19,7 +19,7 @@
     },
     "newArchEnabled": true,
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/logo-small.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",

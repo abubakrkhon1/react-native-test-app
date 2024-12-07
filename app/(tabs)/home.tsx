@@ -7,10 +7,12 @@ import Trending from '~/components/Trending';
 import VideoCard from '~/components/VideoCard';
 
 import { images } from '~/constants';
+import { useGlobalContext } from '~/context/GlobalProvider';
 import { getAllPosts, getLatestPosts } from '~/lib/appwrite';
 import useAppwrite from '~/lib/useAppwrite';
 
 const Home = () => {
+  const { user, setUser, isLoggedIn } = useGlobalContext();
   const { data:posts, refetch, } = useAppwrite(getAllPosts);
   const { data:latestPosts } = useAppwrite(getLatestPosts);
 
@@ -33,7 +35,7 @@ const Home = () => {
             <View className="mb-6 flex-row items-start justify-between">
               <View className="">
                 <Text className="font-pmedium text-sm text-gray-100">Welcome Back!</Text>
-                <Text className="font-psemibold text-2xl text-white">JSMastery</Text>
+                <Text className="font-psemibold text-2xl text-white">{user?.username}</Text>
               </View>
 
               <View className="mt-1.5">
