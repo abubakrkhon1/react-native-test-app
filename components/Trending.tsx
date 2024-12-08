@@ -106,7 +106,7 @@ const Trending = ({ posts }: any) => {
       horizontal
       onViewableItemsChanged={viewableItemsChange}
       viewabilityConfig={{ itemVisiblePercentThreshold: 100 }}
-      contentOffset={{ x: 105, y: 0 }}
+      contentOffset={{ x: 150, y: 0 }}
       showsHorizontalScrollIndicator={false}
     />
   );
